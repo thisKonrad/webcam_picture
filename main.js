@@ -3,9 +3,9 @@ const video = document.querySelector('.video');
 const cvs = document.querySelector('.picture');
 const newPictureButton = document.querySelector('.new_picture');
 
+const cvsWidth = 800;
+const cvsHeight = 400;
 const ctx = cvs.getContext('2d');
-
-
 
 const constraint = {
   audio: true,
@@ -29,5 +29,5 @@ getUserCamera();
 
 
 newPictureButton.addEventListener('click', () => {
-  ctx.drawImage(video, 0, 0, 440, 640)
+  ctx.drawImage(video, 0, 0, cvsWidth, cvsHeight)
 })
