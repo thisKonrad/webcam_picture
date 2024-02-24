@@ -3,12 +3,15 @@ const video = document.querySelector('.video');
 const cvs = document.querySelector('.picture');
 const newPictureButton = document.querySelector('.new_picture');
 
+const ctx = cvs.getContext('2d');
+
+
 
 const constraint = {
   audio: true,
   video: {
-    width: { min: 40, ideal: 1280, max: 1920 },
-    height: { min: 20, ideal: 800, max: 1080 }
+    width: { min: 620, ideal: 1280, max: 1920 },
+    height: { min: 480, ideal: 800, max: 1080 }
 
   }
 }
@@ -22,3 +25,9 @@ async function getUserCamera() {
     alert('error to acces your device camera: ', error)
   }
 };
+getUserCamera();
+
+
+newPictureButton.addEventListener('click', () => {
+  ctx.drawImage(video, 0, 0, 440, 640)
+})
