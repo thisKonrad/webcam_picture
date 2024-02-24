@@ -10,11 +10,15 @@ const ctx = cvs.getContext('2d');
 const constraint = {
   audio: true,
   video: {
-    width: { min: 620, ideal: 1280, max: 1920 },
-    height: { min: 480, ideal: 800, max: 1080 }
+    /*   width: { min: 620, ideal: 1280, max: 1920 },
+      height: { min: 480, ideal: 800, max: 1080 } */
+    width: cvsWidth,
+    height: cvsHeight,
 
   }
 }
+
+
 async function getUserCamera() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia(constraint);
@@ -29,5 +33,5 @@ getUserCamera();
 
 
 newPictureButton.addEventListener('click', () => {
-  ctx.drawImage(video, 0, 0, cvsWidth, cvsHeight)
+  ctx.drawImage(video, 0, 0, cvsWidth / 3, cvsHeight / 3)
 })
