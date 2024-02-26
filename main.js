@@ -48,7 +48,52 @@ newPictureButton.addEventListener('click', () => {
   const cvs = document.createElement('canvas');
   const ctx = cvs.getContext('2d');
   cvsWrap.appendChild(cvs);
-
   ctx.drawImage(video, 0, 0, cvsWidth / 3, cvsHeight / 3);
+
+  cvs.addEventListener('click', () => {
+    /* show modal with options to save or delete the canvas*/
+    const modal = document.createElement('div');
+    modal.classList.add('picture_modal');
+
+    const options = document.createElement('div');
+    options.classList.add('picture_options');
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'download';
+    saveButton.classList.add('picture_button');
+    saveButton.addEventListener('click', () => {
+      /* save the canvas as an image */
+      const link = document.createElement('a');
+      link.href = cvs.toDataURL();
+      link.download = 'my_picture.png';
+      link.click();
+      /* close modal */
+      cvsWrap.removeChild(modal);
+    });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'delete';
+    deleteButton.classList.add('picture_button');
+    deleteButton.addEventListener('click', () => {
+      cvsWrap.removeChild(cvs);
+      document.body.removeChild(modal);
+    });
+
+    const closeModal = document.createElement('button');
+    closeModal.textContent = 'X';
+    closeModal.classList.add('picture_modal_close');
+    closeModal.addEventListener('click', () => {
+      document.body.removeChild(modal);
+    });
+
+    options.appendChild(saveButton);
+    options.appendChild(deleteButton);
+    options.appendChild(closeModal);
+    modal.appendChild(options);
+    document.body.appendChild(modal);
+
+  });
+
+
 
 })

@@ -1,0 +1,32 @@
+/*:::: modal_style :::: */
+.picture_modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.picture_options {
+  width: 55%;
+  height: 36%;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.picture_button {
+  min-width: 45%;
+  margin: 1rem;
+  padding: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.picture_modal_close {
+  color: black;
+}
