@@ -80,7 +80,7 @@ newPictureButton.addEventListener('click', () => {
     });
 
     const closeModal = document.createElement('button');
-    closeModal.textContent = 'X';
+    closeModal.innerHTML = '&#x2715;';
     closeModal.classList.add('picture_modal_close');
     closeModal.addEventListener('click', () => {
       document.body.removeChild(modal);
