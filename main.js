@@ -60,7 +60,7 @@ newPictureButton.addEventListener('click', () => {
 
     const saveButton = document.createElement('button');
     saveButton.textContent = 'download';
-    saveButton.classList.add('picture_button');
+    saveButton.classList.add('picture_button', 'picture_button_save');
     saveButton.addEventListener('click', () => {
       /* save the canvas as an image */
       const link = document.createElement('a');
@@ -73,7 +73,7 @@ newPictureButton.addEventListener('click', () => {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'delete';
-    deleteButton.classList.add('picture_button');
+    deleteButton.classList.add('picture_button', 'picture_button_delete');
     deleteButton.addEventListener('click', () => {
       cvsWrap.removeChild(cvs);
       document.body.removeChild(modal);
