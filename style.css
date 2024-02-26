@@ -38,7 +38,9 @@ video {
   height: 15%;
 }
 
-.new_picture {
+.new_picture,
+.start_webcam,
+.stop_webcam {
   cursor: pointer;
   font-size: 1.4rem;
   padding: 0.8rem;
