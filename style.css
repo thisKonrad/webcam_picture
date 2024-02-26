@@ -41,6 +41,7 @@ video {
 .new_picture,
 .start_webcam,
 .stop_webcam {
+  width: 12rem;
   cursor: pointer;
   font-size: 1.4rem;
   padding: 0.8rem;
