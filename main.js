@@ -6,7 +6,7 @@ const startButton = document.querySelector('.start_webcam');
 const stopButton = document.querySelector('.stop_webcam');
 
 
-const cvsWidth = 800;
+const cvsWidth = 400;
 const cvsHeight = 400;
 
 

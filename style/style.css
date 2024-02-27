@@ -34,8 +34,15 @@ main {
 
 video {
   border: 1px solid white;
-  width: 45%;
-  height: 15%;
+  border-radius: 320px;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 2rem black;
+}
+.video_wrap {
+  z-index: 99;
+  margin: 2rem;
 }
 
 .new_picture,
@@ -53,4 +60,17 @@ video {
 .picture {
   width: 12rem;
   height: 8rem;
+}
+
+.control_wrap {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  margin: 2rem;
+}
+
+.cvs_wrap {
+  z-index: 0;
+  position: relative;
+  margin: 4rem;
 }
